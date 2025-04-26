@@ -9,7 +9,7 @@
   <style>
     body { margin:20px; background:#000; color:gold; font-family:'Comfortaa',sans-serif; text-align:justify; line-height:1.8; font-size:110%; }
     .header{text-align:center;margin-bottom:40px;}
-    .header h1{margin:0;font-size:1.4em;font-weight:bold;}
+    .header h1{margin:0;font-size:1.05em;font-weight:bold;} /* ίδιο μέγεθος με h2 */
     .header h2{margin:5px 0 20px;font-size:1.05em;font-weight:normal;}
     .subtitle{font-size:calc(1em+20px);text-align:center;margin-bottom:30px;}
     #packages{text-align:left;}
@@ -22,7 +22,7 @@
     .sub-button.quiz{border:2px solid #1e90ff;}
     .sub-button:hover{background:gold;color:black;}
     .modal{display:none;position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.7);}
-    .modal-content{background:#111;color:gold;margin:10% auto;padding:20px;border:2px solid gold;width:60%;max-width:400px;border-radius:8px;overflow-y:auto;max-height:70%;}
+    .modal-content{background:#111;color:gold;margin:10% auto;padding:20px;border:2px solid gold;width:156%;max-width:1040px;border-radius:8px;overflow-y:auto;max-height:70%;} /* +30% σε πλάτος */
     .close-btn{float:right;font-size:1.2em;font-weight:bold;border:2px solid gold;background:transparent;color:gold;cursor:pointer;border-radius:5px;padding:2px 6px;}
     .close-btn:hover{background:gold;color:black;}
     .modal-content h3{margin-top:0;}
@@ -35,8 +35,6 @@
   </div>
   <div class="subtitle">Επιμόρφωση στις Τ.Π.Ε (3η Περίοδος – 2025) 💡🚀</div>
   <div id="packages">
-    <!-- Δημιουργία δυναμικά για 14 πακέτα -->
-    <!-- Πακέτα 1–4 με πλήρεις περιλήψεις -->
     <div class="package">
       <button class="package-button" onclick="toggleButtons(1)">Πακέτο 1: Η ελληνική εκπαιδευτική εμπειρία στον δρόμο της νέας ψηφιακής εποχής 📱🏛️</button>
       <div class="sub-buttons" id="sub-1">
@@ -65,10 +63,8 @@
         <a href="https://domvrosepimorfosi.github.io/unit4/" target="_blank" class="sub-button quiz">Quiz ❓</a>
       </div>
     </div>
-    <!-- Πακέτα 5–14 placeholders -->
-    <!-- Δυναμική δημιουργία -->
     <script>
-      const more = [
+      const more=[
         'Πακέτο 5: Μάθηση με νέους τρόπους – Κριτική ανάγνωση σεναρίων',
         'Πακέτο 6: Ψηφιακά πολυτροπικά κείμενα στη διδασκαλία της ξένης γλώσσας',
         'Πακέτο 8: Ψηφιακός γραμματισμός σε ευρωπαϊκά πλαίσια αναφοράς και προγράμματα σπουδών',
@@ -78,23 +74,18 @@
         'Πακέτο 12: Κριτική ανάγνωση διδακτικών πρακτικών και σεναρίων',
         'Πακέτο 13: Ανασχεδιασμός σεναρίων με ενσωμάτωση θεωριών μάθησης και διδακτικής',
         'Πακέτο 14: Αξιοποίηση και εφαρμογή σεναρίων στην πράξη: Προοπτικές και αναπλαισίωση'
-      ];
-      more.forEach((title,i)=>{
-        const idx = i+5;
-        document.write(`
-          <div class="package">
-            <button class="package-button" onclick="toggleButtons(${idx})">${title}</button>
-            <div class="sub-buttons" id="sub-${idx}">
-              <button class="sub-button summary" onclick="openModal('modal${idx}')">Περίληψη Ενότητας 📄</button>
-              <a href="#" class="sub-button quiz">Quiz ❓</a>
-            </div>
+      ]; more.forEach((t,i)=>{const idx=i+5; document.write(`
+        <div class="package">
+          <button class="package-button" onclick="toggleButtons(${idx})">${t}</button>
+          <div class="sub-buttons" id="sub-${idx}">
+            <button class="sub-button summary" onclick="openModal('modal${idx}')">Περίληψη Ενότητας 📄</button>
+            <a href="#" class="sub-button quiz">Quiz ❓</a>
           </div>
-        `);
-      });
+        </div>
+      `);});
     </script>
   </div>
   <!-- Modals -->
-  <!-- Full text from docs -->
   <div id="modal1" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('modal1')">×</button><h3>Περίληψη Πακέτου 1</h3>
       <p>Το κεφάλαιο εξετάζει την πορεία ένταξης και αξιοποίησης των ΤΠΕ και των ΨΜ στο ελληνικό εκπαιδευτικό σύστημα, με έμφαση στην ξενόγλωσση εκπαίδευση, από τις πρώτες δεκαετίες (από “διδακτικές μηχανές” 1960–70) έως τη ραγδαία εξάπλωση των προσωπικών Η/Υ, του διαδικτύου και, σήμερα, της Τεχνητής Νοημοσύνης (ΤΝ).</p>
       <p><strong>1.1 Γενικό εκπαιδευτικό πλαίσιο:</strong> Φάσεις ένταξης τεχνολογίας: διδακτικές μηχανές, τεχνοκεντρικό μοντέλο, πολυμέσα & δίκτυα, ολοκληρωμένο πρότυπο.</p>
@@ -126,7 +117,6 @@
       <p><strong>4.3 Προσαρμογή:</strong> Θέμα, στόχοι, ακροατήριο, υποδομή, αξιολόγηση.</p>
       <p><strong>4.4 Δομή σεναρίου:</strong> Ταυτότητα, φάσεις, ρόλοι, εργαλεία, ανατροφοδότηση, ρουμπρίκες.</p>
   </div></div>
-  <!-- Placeholders modals 5-14 -->
   <script>
     for(let i=5;i<=14;i++){
       document.write(`
@@ -140,4 +130,3 @@
   </script>
 </body>
 </html>
-
