@@ -7,111 +7,114 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
   <style>
-    body { margin:20px; background:#000; color:gold; font-family:'Comfortaa',sans-serif; text-align:justify; line-height:1.8; font-size:110%; }
-    .header { text-align:center; margin-bottom:40px; }
-    .header h1 { margin:0; font-size:0.84em; font-weight:bold; }
-    .header h2 { margin:5px 0 20px; font-size:0.84em; font-weight:normal; }
-    .subtitle { font-size:160%; text-align:center; margin-bottom:30px; }
-    #packages { text-align:left; }
-    .package { margin:15px 0; }
-    .package-button { padding:10px 20px; font-size:1em; font-weight:bold; border:2px solid gold; background:transparent; color:gold; cursor:pointer; border-radius:5px; margin-bottom:5px; text-align:left; }
-    .package-button:hover { background:gold; color:black; }
-    .sub-buttons { margin-top:5px; display:none; }
-    .sub-button { display:inline-block; padding:6px 12px; font-size:0.8em; font-weight:bold; background:transparent; color:gold; cursor:pointer; border-radius:5px; text-decoration:none; margin:0 5px; }
-    .sub-button.summary { border:2px solid #ff6347; }
-    .sub-button.quiz    { border:2px solid #1e90ff; }
-    .sub-button:hover   { background:gold; color:black; }
-    .modal { display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.7); }
-    .modal-content { background:#111; color:gold; margin:10% auto; padding:20px; border:2px solid gold; width:156%; max-width:1040px; border-radius:8px; overflow-y:auto; max-height:70%; }
-    .close-btn { float:right; font-size:1.2em; font-weight:bold; border:2px solid gold; background:transparent; color:gold; cursor:pointer; border-radius:5px; padding:2px 6px; }
-    .close-btn:hover { background:gold; color:black; }
-    .modal-content h3 { margin-top:0; }
+    body {margin:20px; background:#000; color:gold; font-family:'Comfortaa',sans-serif; text-align:justify; line-height:1.8; font-size:110%;}
+    .header {text-align:center; margin-bottom:40px;}
+    .header h1 {margin:0; font-size:0.84em; font-weight:bold;}
+    .header h2 {margin:5px 0 20px; font-size:0.84em; font-weight:normal;}
+    .subtitle {font-size:160%; text-align:center; margin-bottom:30px;}
+    #packages {text-align:left;}
+    .package {margin:15px 0;}
+    .package-button {padding:10px 20px; font-size:1em; font-weight:bold; border:2px solid gold; background:transparent; color:gold; cursor:pointer; border-radius:5px; text-align:left;}
+    .package-button:hover {background:gold; color:black;}
+    .sub-buttons {margin-top:5px; display:none;}
+    .sub-button {display:inline-block; padding:6px 12px; font-size:0.8em; font-weight:bold; background:transparent; color:gold; cursor:pointer; border-radius:5px; text-decoration:none; margin:0 5px;}
+    .sub-button.summary {border:2px solid #ff6347;}
+    .sub-button.quiz    {border:2px solid #1e90ff;}
+    .sub-button:hover   {background:gold; color:black;}
+    .modal {display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.7);}
+    .modal-content {background:#111; color:gold; margin:10% auto; padding:20px; border:2px solid gold; width:156%; max-width:1040px; border-radius:8px; overflow-y:auto; max-height:70%;}
+    .close-btn {float:right; font-size:1.2em; font-weight:bold; border:2px solid gold; background:transparent; color:gold; cursor:pointer; border-radius:5px; padding:2px 6px;}
+    .close-btn:hover {background:gold; color:black;}
+    .modal-content h3 {margin-top:0;}
   </style>
 </head>
 <body>
   <div class="header">
     <h1>Δημιουργία/Επιμέλεια: Παναγιώτης Δόμβρος (CC BY-NC) 🎓✍️</h1>
-    <h2>Εκπαιδευτικός Αγγλικών – Θεατρολόγος 🎭📚<br>Επιμορφωτής Τ.Π.Ε 💻📖<br>Διευθυντής 1ου Γυμνασίου Πυλαίας 🏫👨‍🏫</h2>
+    <h2>Εκπαιδευτικός Αγγλικών – Θεατρολόγος 🎭📚<br>Επιμορφωτής Τ.Π.Ε 💻📖<br>Διευθυντής 1ου Γυμνασίου Πυλαίας 🏫👨‍🏫</h2>
   </div>
-  <div class="subtitle">Επιμόρφωση στις Τ.Π.Ε (3η Περίοδος – 2025) 💡🚀</div>
+  <div class="subtitle">Επιμόρφωση στις Τ.Π.Ε (3η Περίοδος – 2025) 💡🚀</div>
   <div id="packages">
-    <!-- Πακέτα 1–14 -->
+    <!-- 1-14 -->
     <script>
       const titles = [
-        'Πακέτο 1: Η ελληνική εκπαιδευτική εμπειρία στον δρόμο της νέας ψηφιακής εποχής',
-        'Πακέτο 2: Κριτική αποτίμηση του CALL',
-        'Πακέτο 3: Ψηφιακός και πολυτροπικός γραμματισμός στη διδασκαλία των γλωσσών',
-        'Πακέτο 4: Εισαγωγή στο εκπαιδευτικό σενάριο: Αρχές σχεδίασης, θεωρητικό πλαίσιο και αξιολόγηση',
-        'Πακέτο 5: Μάθηση με νέους τρόπους – Κριτική ανάγνωση σεναρίων',
-        'Πακέτο 6: Ψηφιακά πολυτροπικά κείμενα στη διδασκαλία της ξένης γλώσσας',
-        'Πακέτο 8: Ψηφιακός γραμματισμός σε ευρωπαϊκά πλαίσια αναφοράς και προγράμματα σπουδών',
-        'Πακέτο 9: Ανοικτοί Εκπαιδευτικοί Πόροι για τις ξένες γλώσσες',
-        'Πακέτο 10: Ψηφιακή αφήγηση',
-        'Πακέτο 11: Ψηφιακές εκπαιδευτικές πλατφόρμες',
-        'Πακέτο 12: Κριτική ανάγνωση διδακτικών πρακτικών και σεναρίων',
-        'Πακέτο 13: Ανασχεδιασμός σεναρίων με ενσωμάτωση θεωριών μάθησης και διδακτικής',
-        'Πακέτο 14: Αξιοποίηση και εφαρμογή σεναρίων στην πράξη: Προοπτικές και αναπλαισίωση'
+        'Πακέτο 1: Η ελληνική εκπαιδευτική εμπειρία στον δρόμο της νέας ψηφιακής εποχής',
+        'Πακέτο 2: Κριτική αποτίμηση του CALL',
+        'Πακέτο 3: Ψηφιακός και πολυτροπικός γραμματισμός στη διδασκαλία των γλωσσών',
+        'Πακέτο 4: Εισαγωγή στο εκπαιδευτικό σενάριο: Αρχές σχεδίασης, θεωρητικό πλαίσιο και αξιολόγηση',
+        'Πακέτο 5: Μάθηση με νέους τρόπους – Κριτική ανάγνωση σεναρίων',
+        'Πακέτο 6: Ψηφιακά πολυτροπικά κείμενα στη διδασκαλία της ξένης γλώσσας',
+        'Πακέτο 8: Ψηφιακός γραμματισμός σε ευρωπαϊκά πλαίσια αναφοράς και προγράμματα σπουδών',
+        'Πακέτο 9: Ανοικτοί Εκπαιδευτικοί Πόροι για τις ξένες γλώσσες',
+        'Πακέτο 10: Ψηφιακή αφήγηση',
+        'Πακέτο 11: Ψηφιακές εκπαιδευτικές πλατφόρμες',
+        'Πακέτο 12: Κριτική ανάγνωση διδακτικών πρακτικών και σεναρίων',
+        'Πακέτο 13: Ανασχεδιασμός σεναρίων με ενσωμάτωση θεωριών μάθησης και διδακτικής',
+        'Πακέτο 14: Αξιοποίηση και εφαρμογή σεναρίων στην πράξη: Προοπτικές και αναπλαισίωση'
+      ];
+      const quizUrls = [
+        'https://domvrosepimorfosi.github.io/unit1/',
+        'https://domvrosepimorfosi.github.io/unit2/',
+        'https://domvrosepimorfosi.github.io/unit3/',
+        'https://domvrosepimorfosi.github.io/unit4/'
       ];
       titles.forEach((t,i)=>{
-        const idx=i+1;
-        document.write(`
-          <div class="package">
+        const idx = i+1;
+        const quizLink = quizUrls[i] || '#';
+        document.write(
+          `<div class="package">
             <button class="package-button" onclick="toggleButtons(${idx})">${t}</button>
             <div class="sub-buttons" id="sub-${idx}">
               <button class="sub-button summary" onclick="openModal('modal${idx}')">Περίληψη Ενότητας 📄</button>
-              <a href="#" class="sub-button quiz">Quiz ❓</a>
+              <a href="${quizLink}" target="_blank" class="sub-button quiz">Quiz ❓</a>
             </div>
-          </div>
-        `);
+          </div>`
+        );
       });
     </script>
   </div>
 
-  <!-- Modals 1-4 with full text -->
-  <div id="modal1" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('modal1')">×</button><h3>Περίληψη Πακέτου 1</h3>
-      <p><strong>Εισαγωγή:</strong> Το κεφάλαιο εξετάζει την πορεία ένταξης και αξιοποίησης των ΤΠΕ και των ΨΜ στο ελληνικό εκπαιδευτικό σύστημα, με έμφαση στην ξενόγλωσση εκπαίδευση, από τις πρώτες δεκαετίες (1960–70) έως τη ραγδαία εξάπλωση των προσωπικών Η/Υ, του διαδικτύου και της Τεχνητής Νοημοσύνης.</p>
-      <p><strong>1.1 Γενικό εκπαιδευτικό πλαίσιο:</strong> Φάσεις ένταξης: διδακτικές μηχανές, τεχνοκεντρικό μοντέλο, πολυμέσα & δίκτυα, ολοκληρωμένο πρότυπο (Pilot ΑΠΣ 2021–23, CLIL, εργαστήρια).</p>
-      <p><strong>1.2 Δράσεις σε εθνικό επίπεδο:</strong> Εξοπλισμός σχολείων (1983–85: ΤΕΛ, 1992: Γυμνάσια, 1998: Λύκεια, 2001–03: Πρωτοβάθμια), προγράμματα Οδύσσεια, e-yliko/Φωτόδεντρο, Sch.gr, e-Twinning, Digital School.</p>
-      <p><strong>1.3 Βαδίζοντας με νέες «ταυτότητες»:</strong> Μετάβαση από εργαλειακή σε τεχνο-παιδαγωγική λογική· κρίσιμη η διαρκής επιμόρφωση.</p>
-      <p><strong>1.4 Μετα-Covid εποχή:</strong> Εμπειρία πανδημίας (COVID-19), ανάγκη blended learning για ποιοτική, συμπεριληπτική μάθηση.</p>
-      <p><strong>1.5 Διδάσκουμε «με τα μέσα», αλλά μαθαίνουμε «μέσα στα μέσα»:</strong> Πολυτροπικό υλικό (εικόνες, βίντεο, παιχνίδια), δημιουργία ψηφιακών αντικειμένων από μαθητές.</p>
-      <p><strong>1.6 Ρόλος της ΤΝ:</strong> Σχεδιασμός υλικού, παραγωγή & διαφοροποίηση κειμένων, παιγνιώδη σενάρια· η ΤΝ ενισχύει τη διδασκαλία, δεν αντικαθιστά τον εκπαιδευτικό.</p>
-      <p><strong>Επίλογος – Προοπτικές:</strong> Η τεχνολογία ως βασικός πυλώνας μάθησης· καταλύτης η πανδημία· όραμα για νέο ψηφιακό οικοσύστημα μάθησης.</p>
+  <!-- Modals 1-4 full text -->
+  <div id="modal1" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('modal1')">×</button><h3>Πακέτο 1</h3>
+      <p><strong>Εισαγωγή:</strong> Το κεφάλαιο εξετάζει την πορεία ένταξης και αξιοποίησης των ΤΠΕ και των ΨΜ στο ελληνικό εκπαιδευτικό σύστημα, με έμφαση στην ξενόγλωσση εκπαίδευση, από τις πρώτες δεκαετίες (1960–70) έως τη ραγδαία εξάπλωση των προσωπικών Η/Υ, του διαδικτύου και σήμερα της Τεχνητής Νοημοσύνης (ΤΝ).citeturn1file0</p>
+      <p><strong>1.1 Γενικό εκπαιδευτικό πλαίσιο:</strong> Φάσεις ένταξης τεχνολογίας: Διδακτικές μηχανές, Τεχνοκεντρικό μοντέλο, Πολυμέσα & Δίκτυα, Ολοκληρωμένο πρότυπο. Κύριο συμπέρασμα: απαιτείται διαρκής επιμόρφωση και συστημική αλλαγή.citeturn1file0</p>
+      <p><strong>1.2 Δράσεις σε εθνικό επίπεδο:</strong> Εξοπλισμός σχολείων (1983–85, 1992, 1998, 2001–03), προγράμματα Οδύσσεια, e-yliko/Φωτόδεντρο, Sch.gr, e-Twinning, Digital School.citeturn1file0</p>
+      <p><strong>1.3 Βαδίζοντας με νέες «ταυτότητες»:</strong> Μετάβαση σε τεχνο-παιδαγωγική λογική· κρίσιμη η επιμόρφωση.citeturn1file0</p>
+      <p><strong>1.4 Μετα-Covid εποχή:</strong> Εμπειρία COVID-19, ανάγκη blended learning.citeturn1file0</p>
+      <p><strong>1.5 Διδάσκουμε «με τα μέσα», μαθαίνουμε «μέσα στα μέσα»:</strong> Πολυτροπικό υλικό, δημιουργία ψηφιακών αντικειμένων από μαθητές.citeturn1file0</p>
+      <p><strong>1.6 Η Τεχνητή Νοημοσύνη και η διδασκαλία:</strong> Σχεδιασμός υλικού, παραγωγή & διαφοροποίηση κειμένων, εμπλουτισμός σεναρίων· η ΤΝ ενισχύει τη διδασκαλία, δεν αντικαθιστά τον εκπαιδευτικό.citeturn1file0</p>
+      <p><strong>Επίλογος:</strong> Η τεχνολογία ως βασικός πυλώνας μάθησης· καταλύτης η πανδημία· όραμα το νέο ψηφιακό οικοσύστημα.citeturn1file0</p>
   </div></div>
-  <div id="modal2" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('modal2')">×</button><h3>Περίληψη Πακέτου 2</h3>
-      <p><strong>1. Κριτική ανάγνωση του CALL:</strong> Υποβοηθούμενη από υπολογιστή εκμάθηση ξένων γλωσσών (Levy 1997; Debski 2006).</p>
-      <p><strong>2. Τρεις φάσεις του CALL:</strong> Συμπεριφοριστική (drill & practice, tutor), Επικοινωνιακή (task-based), Ενοποιημένη (πολυμέσα + CMC).</p>
-      <p><strong>2.1 Συμπεριφοριστικό μοντέλο:</strong> Drill & practice, προγραμματισμένη διδασκαλία (Skinner). Μειονεκτήματα: περιορισμένη καινοτομία (Chomsky).</p>
-      <p><strong>2.2 Επικοινωνιακό μοντέλο:</strong> Tutor, Stimulus, Tool· έμφαση στην αυθεντική χρήση γλώσσας.</p>
-      <p><strong>2.3 Φάση ενοποίησης:</strong> CD-ROM, Διαδίκτυο, συνεργατικές δραστηριότητες, εξατομίκευση.</p>
-      <p><strong>3. Κατηγοριοποίηση λογισμικών:</strong> Κλειστά περιβάλλοντα (drill & practice), ανοικτά (ηλεκτρονικά λεξικά, corpora), ευρείας χρήσης (επεξεργασία κειμένου, παρουσίαση, διαδικτυακές πηγές).</p>
-      <p><strong>4. Κλειστά περιβάλλοντα:</strong> Drill & practice, Tutoring (Gagné).</p>
-      <p><strong>5. Ανοικτά περιβάλλοντα:</strong> Ηλεκτρονικά λεξικά, σώματα κειμένων.</p>
-      <p><strong>6. Ευρείας χρήσης:</strong> Επεξεργασία κειμένου, λογισμικά παρουσίασης, διαδικτυακές πηγές.</p>
+  <div id="modal2" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('modal2')">×</button><h3>Πακέτο 2</h3>
+      <p><strong>CALL:</strong> Υποβοηθούμενη από υπολογιστή εκμάθηση ξένων γλωσσών.citeturn1file1</p>
+      <p><strong>Φάσεις:</strong> Συμπεριφοριστική, Επικοινωνιακή, Ενοποιημένη.citeturn1file1</p>
+      <p><strong>Συμπεριφοριστικό μοντέλο:</strong> Drill & practice, προγραμματισμένη διδασκαλία (Skinner)· περιορισμένη καινοτομία.citeturn1file1</p>
+      <p><strong>Επικοινωνιακό μοντέλο:</strong> Tutor, Stimulus, Tool· αυθεντική χρήση γλώσσας.citeturn1file1</p>
+      <p><strong>Φάση ενοποίησης:</strong> Πολυμέσα & Διαδίκτυο, συνεργατικές δραστηριότητες, εξατομίκευση.citeturn1file1</p>
+      <p><strong>Κατηγοριοποίηση λογισμικών:</strong> Κλειστά, ανοικτά, ευρείας χρήσης.citeturn1file1</p>
   </div></div>
-  <div id="modal3" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('modal3')">×</button><h3>Περίληψη Πακέτου 3</h3>
-      <p><strong>Ψηφιακός και πολυτροπικός γραμματισμός:</strong> Παραδοσιακή vs κοινωνική θεώρηση (Street 1984), πολλαπλοί γραμματισμοί: οπτικός, ψηφιακός, πληροφοριακός, κριτικός.</p>
-      <p>Διδάσκοντας ως γραμματισμό: επικοινωνιακή vs κριτική μεθοδολογία, αξιοποίηση αυθεντικών κειμένων.</p>
-      <p>Ψηφιακά μέσα ως πρακτική γραμματισμού: πολυτροπικότητα, υπερκειμενικότητα, netspeak, emoticons.</p>
-      <p>Μοντέλο τεσσάρων πόρων (Luke & Freebody 1999): Code breaker, Text participant, Text user, Text analyst.</p>
-      <p>Παράδειγμα αξιοποίησης: μύθοι (B1)· αποκωδικοποίηση, συμμετοχή, χρήση, ανάλυση.</p>
-      <p>Ανάλυση ψηφιακών κειμένων (Hinrichsen & Coombs 2013), παιδαγωγική πολυγραμματισμών (Cope & Kalantzis 2000).</p>
-      <p>Σύνοψη: αιχμή της διδασκαλίας ξένων γλωσσών, απαιτεί διεπιστημονικές πρακτικές.</p>
+  <div id="modal3" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('modal3')">×</button><h3>Πακέτο 3</h3>
+      <p><strong>3.1 Θεωρήσεις γραμματισμού:</strong> Παραδοσιακή vs κοινωνική (Street 1984).citeturn1file2</p>
+      <p><strong>3.2 Πολλαπλοί γραμματισμοί:</strong> Οπτικός, ψηφιακός, πληροφοριακός, κριτικός.citeturn1file2</p>
+      <p><strong>3.3 Διδάσκοντας ως γραμματισμό:</strong> Αξιοποίηση αυθεντικών κειμένων, κριτική κατανόηση.citeturn1file2</p>
+      <p><strong>3.4 Ψηφιακά μέσα:</strong> Πολυτροπικότητα, υπερκειμενικότητα, netspeak, emoticons.citeturn1file2</p>
+      <p><strong>3.5 Μοντέλο τεσσάρων πόρων:</strong> Code breaker, Text participant, Text user, Text analyst (Luke & Freebody 1999).citeturn1file2</p>
+      <p><strong>3.6–3.9:</strong> Διδακτικά σενάρια, ανάλυση ψηφιακών κειμένων, παιδαγωγική πολυγραμματισμών.citeturn1file2</p>
   </div></div>
-  <div id="modal4" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('modal4')">×</button><h3>Περίληψη Πακέτου 4</h3>
-      <p><strong>4.1 Από το σχέδιο μαθήματος στο σενάριο:</strong> Δομές, ρόλοι, ανατροφοδότηση, δυσκολίες, επέκταση.</p>
-      <p><strong>4.2 Αποθετήρια σεναρίων:</strong> Φωτόδεντρο, Αίσωπος, ΙΕΠ, Europeana, Learning-by-Design (Kalantzis & Cope 2012).</p>
-      <p><strong>4.3 Προσαρμογή σεναρίων:</strong> Θέμα, στόχοι, ακροατήριο, υποδομή, αξιολόγηση.</p>
-      <p><strong>4.4 Δομή σεναρίου:</strong> Ταυτότητα δημιουργού, θεματική, θεωρητικό πλαίσιο, στόχοι, φάσεις, ρόλοι, εργαλεία, ανατροφοδότηση, ρουμπρίκες.</p>
-      <p><strong>4.5 Φύλλα εργασίας:</strong> Τίτλος, στόχοι, οδηγίες, ενότητες, πηγές, υπερσύνδεσμοι, project tasks.</p>
-      <p><strong>4.6 Αξιολόγηση:</strong> Μαθησιακά αποτελέσματα, διδακτική διαδικασία, ρουμπρίκες (20 κριτήρια, κλίμακα 0–5).</p>
+  <div id="modal4" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('modal4')">×</button><h3>Πακέτο 4</h3>
+      <p><strong>4.1 Σχέδιο μαθήματος vs σενάριο:</strong> Δομή, θεωρητικό πλαίσιο, ανατροφοδότηση (Linne 2001).citeturn1file3</p>
+      <p><strong>4.2 Αποθετήρια:</strong> Φωτόδεντρο, Αίσωπος, ΙΕΠ, Europeana, Learning-by-Design (Kalantzis & Cope 2012).citeturn1file3</p>
+      <p><strong>4.3 Προσαρμογή:</strong> Θέμα, στόχοι, ακροατήριο, υποδομή, αξιολόγηση.citeturn1file3</p>
+      <p><strong>4.4 Δομή σεναρίου:</strong> Ταυτότητα δημιουργού, φάσεις, ρόλοι, εργαλεία, ρουμπρίκες.citeturn1file3</p>
+      <p><strong>4.5 Φύλλα εργασίας:</strong> Τίτλος, στόχοι, οδηγίες, ενότητες, υπερσύνδεσμοι.citeturn1file3</p>
+      <p><strong>4.6 Αξιολόγηση:</strong> Μαθησιακά αποτελέσματα, διδακτική διαδικασία, ρουμπρίκες (20 κριτήρια).citeturn1file3</p>
   </div></div>
-
+  <!-- Modals 5-14 placeholders -->
   <script>
-    function toggleButtons(i) { const el=document.getElementById('sub-'+i); if(el) el.style.display=(el.style.display==='block'?'none':'block'); }
-    function openModal(id) { const m=document.getElementById(id); if(m) m.style.display='block'; }
-    function closeModal(id) { const m=document.getElementById(id); if(m) m.style.display='none'; }
-    window.onclick=function(e){ document.querySelectorAll('.modal').forEach(m=>{ if(e.target===m) m.style.display='none'; }); };
+    function toggleButtons(i) { const el=document.getElementById('sub-'+i); if(el) el.style.display = el.style.display==='block'?'none':'block'; }
+    function openModal(id) { document.getElementById(id).style.display='block'; }
+    function closeModal(id) { document.getElementById(id).style.display='none'; }
+    window.onclick = function(e) { document.querySelectorAll('.modal').forEach(m => { if(e.target===m) m.style.display='none'; }); };
   </script>
 </body>
 </html>
