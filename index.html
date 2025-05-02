@@ -20,6 +20,7 @@
     .sub-button {display:inline-block; padding:6px 12px; font-size:0.8em; font-weight:bold; background:transparent; color:gold; cursor:pointer; border-radius:5px; text-decoration:none; margin:0 5px;}
     .sub-button.summary {border:2px solid #ff6347;}
     .sub-button.quiz    {border:2px solid #1e90ff;}
+    .sub-button.extra   {border:2px solid #32cd32;}
     .sub-button:hover   {background:gold; color:black;}
     .modal {display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.7);}
     .modal-content {background:#111; color:gold; margin:10% auto; padding:20px; border:2px solid gold; width:156%; max-width:1040px; border-radius:8px; overflow-y:auto; max-height:70%;}
@@ -56,17 +57,26 @@
         'https://domvrosepimorfosi.github.io/unit1/',
         'https://domvrosepimorfosi.github.io/unit2/',
         'https://domvrosepimorfosi.github.io/unit3/',
-        'https://domvrosepimorfosi.github.io/unit4/'
+        'https://domvrosepimorfosi.github.io/unit4/',
+        'https://domvrosepimorfosi.github.io/unti5/',
+        'https://domvrosepimorfosi.github.io/unit6/'
       ];
       titles.forEach((t,i)=>{
         const idx = i+1;
         const quizLink = quizUrls[i] || '#';
+        let extraButton = '';
+        if(idx === 5) {
+          extraButton = `<a href="https://drive.google.com/file/d/10b_ZAgkPlNltRS1BHqcl7_-yB4Q1aKt2/view?usp=sharing" target="_blank" class="sub-button extra">Φύλλα Εργασίας 📝</a>`;
+        } else if(idx === 6) {
+          extraButton = `<a href="https://drive.google.com/file/d/1HRIenOSdi5pDSpbfP5-919kBG7jiL9P_/view?usp=sharing" target="_blank" class="sub-button extra">Πολυτροπικά Κείμενα 🖼️</a>`;
+        }
         document.write(
           `<div class="package">
             <button class="package-button" onclick="toggleButtons(${idx})">${t}</button>
             <div class="sub-buttons" id="sub-${idx}">
               <button class="sub-button summary" onclick="openModal('modal${idx}')">Περίληψη Ενότητας 📄</button>
               <a href="${quizLink}" target="_blank" class="sub-button quiz">Quiz ❓</a>
+              ${extraButton}
             </div>
           </div>`
         );
@@ -131,7 +141,7 @@
       <p><strong>Επίλογος - Συμπεράσματα - Προοπτικές:</strong></p>
       <ul>
         <li>Στροφή: η τεχνολογία αποτελεί σήμερα βασικό στοιχείο της διδακτικής διαδικασίας</li>
-        <li>Καθοριστική επιτάχυνση: η πανδημία λειτούργησε ως καταλύτης για αλλαγές</li>
+        <li>Καθοριστική επιτάχυνση: η πανδημία λειτούργηκε ως καταλύτης για αλλαγές</li>
         <li>Όραμα για το μέλλον: νέο ψηφιακό οικοσύστημα μάθησης με κριτική σκέψη, δημιουργικότητα και ενεργή πολιτειότητα</li>
       </ul>
   </div></div>
@@ -410,7 +420,226 @@
       </ol>
   </div></div>
 
-  <!-- Modals 5-14 placeholders -->
+  <!-- Modal 5 -->
+  <div id="modal5" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('modal5')">×</button><h3>Πακέτο 5: Μάθηση με νέους τρόπους – Κριτική ανάγνωση σεναρίων</h3>
+      <p><strong>1. 4.5 -- Φύλλα Εργασίας</strong></p>
+      <p>Το εγχειρίδιο «Φύλλα Εργασίας» είναι ένας αναλυτικός οδηγός σχεδιασμού, δημιουργίας και αξιολόγησης εκπαιδευτικών φύλλων εργασίας για τη διδασκαλία ξένων γλωσσών.</p>
+
+      <p><strong>Α. Σκοπός και Πλαίσιο</strong></p>
+      <ul>
+        <li>Εξηγείται η ανάγκη συμπληρωματικού διδακτικού υλικού όταν τα τυπικά εγχειρίδια δεν καλύπτουν επαρκώς συγκεκριμένους μαθησιακούς στόχους ή δεξιότητες.</li>
+        <li>Θέτει ως βασική αρχή ότι κάθε φύλλο εργασίας πρέπει να σχεδιάζεται με σαφείς παιδαγωγικούς στόχους και στοχευμένες δραστηριότητες.</li>
+      </ul>
+
+      <p><strong>Β. Στάδια Σχεδιασμού</strong></p>
+      <ol>
+        <li><strong>Ανάλυση αναγκών και στόχων</strong>
+          <ul>
+            <li>Καταγραφή της παρούσας διδακτικής ενότητας και των γνωστικών -- γλωσσικών κενών των μαθητών.</li>
+            <li>Διατύπωση ενός πίνακα στόχων (π.χ. κατανόηση ακουστικού λόγου, εμπλουτισμός λεξιλογίου, εξάσκηση γραμματικής).</li>
+          </ul>
+        </li>
+        <li><strong>Επιλογή τύπου φύλλου εργασίας</strong>
+          <ul>
+            <li>Ξεχωρίζονται πέντε βασικές κατηγορίες:
+              <ol>
+                <li><strong>Ασκήσεις επί συνόλων κειμένων</strong> (μεταγλωσσική ανάλυση, σύγκριση προτάσεων).</li>
+                <li><strong>Δραστηριότητες βασισμένες σε εικόνες / διαγράμματα</strong> (διερεύνηση περιεχομένου μέσω πολυτροπικών ερεθισμάτων).</li>
+                <li><strong>Αυτοαξιολογητικά κουίζ</strong> (multiple choice, σωστό/λάθος, αντιστοιχίσεις).</li>
+                <li><strong>Οδηγοί project ή διερευνητικής μάθησης</strong> (επεξεργασία αυθεντικών πηγών, συνθετικές εργασίες).</li>
+                <li><strong>Διαδραστικά ψηφιακά φύλλα</strong> (χρήση Web 2.0 εργαλείων, ενσωμάτωση βίντεο και ήχου).</li>
+              </ol>
+            </li>
+          </ul>
+        </li>
+        <li><strong>Δομή και διάταξη</strong>
+          <ul>
+            <li>Οδηγίες ξεκάθαρες, βήμα προς βήμα, με ξεχωριστά πλαίσια για κάθε δραστηριότητα.</li>
+            <li>Εναλλαγή γραπτών κειμένων με οπτικά ερεθίσματα (εικόνες, εικονίδια) ώστε να υποστηρίζεται η οπτική μνήμη και να ενθαρρύνεται η συναισθηματική εμπλοκή.</li>
+          </ul>
+        </li>
+        <li><strong>Συγγραφή και υποστήριξη</strong>
+          <ul>
+            <li>Χρήση απλής γλώσσας για τις οδηγίες και παράθεση παραδειγμάτων με έμφαση στον αυθεντικό λόγο (διαλόγους, αφηγήσεις).</li>
+            <li>Προτάσεις για διαφοροποίηση (π.χ. επιπέδου δυσκολίας, υποστηρικτικά glossaries, πλαίσια με χρήσιμες εκφράσεις).</li>
+          </ul>
+        </li>
+        <li><strong>Εργαλεία παραγωγής</strong>
+          <ul>
+            <li>Αναφορά σε ελεύθερα λογισμικά επεξεργασίας κειμένου (LibreOffice, Google Docs), ειδικά σχεδιασμένα εργαλεία δημιουργίας ψηφιακών φύλλων (πλατφόρμες με drag-and-drop) και παραδείγματα χρήσης PowerPoint/Prezi για διαδραστική παρουσίαση.</li>
+          </ul>
+        </li>
+        <li><strong>Αξιολόγηση και ανατροφοδότηση</strong>
+          <ul>
+            <li>Στάδια δοκιμαστικής εφαρμογής: πιλοτική χρήση με μικρές ομάδες μαθητών, συλλογή σχολίων, αναθεώρηση.</li>
+            <li>Χρήση σύντομων ερωτηματολογίων ή πρακτικών συνεντεύξεων για την εκτίμηση: καταλληλότητα περιεχομένου, σαφήνεια οδηγιών, ώρα ολοκλήρωσης.</li>
+          </ul>
+        </li>
+      </ol>
+
+      <p><strong>Γ. Παιδαγωγικές Διαστάσεις</strong></p>
+      <ul>
+        <li><strong>Λεκτικά στοιχεία:</strong> Εστίαση στην ακρίβεια της γλώσσας, στην ποικιλία λεξιλογίου και στη σαφήνεια των οδηγιών.</li>
+        <li><strong>Λειτουργικά στοιχεία:</strong> Δραστηριότητες που ενσωματώνουν καταιγισμό ιδεών, ρόλους μαθητών, συνεργατικές διαδικασίες, project-based tasks και αυτοαξιολόγηση.</li>
+        <li><strong>Οπτικά ερεθίσματα:</strong> Εικόνες που συνδέονται με το περιεχόμενο, infographics για γραμματικές δομές, color-coding σε πίνακες λεξιλογίου.</li>
+        <li><strong>Διαφοροποίηση:</strong> Εναλλακτικές διαδρομές μέσα στο φύλλο εργασίας για μαθητές διαφορετικών επιπέδων, προτάσεις για extension tasks ή remedial exercises.</li>
+      </ul>
+
+      <p><strong>2. 5 -- Μάθηση με νέους τρόπους</strong></p>
+      <p>Το δεύτερο εγχειρίδιο εστιάζει σε σύγχρονες μεθόδους διδασκαλίας, αξιοποιώντας ψηφιακές τεχνολογίες, και στο πώς αυτές μεταμορφώνουν το ρόλο του δασκάλου και του μαθητή στην ξενόγλωσση εκπαίδευση.</p>
+
+      <p><strong>Α. Διαφοροποιημένη Διδασκαλία (Section 5.1)</strong></p>
+      <ul>
+        <li><strong>Συμπεριληπτική τάξη:</strong> Ανάγκη αναγνώρισης διαφορετικών μαθησιακών προφίλ και δημιουργία περιβάλλοντος όπου όλα τα παιδιά συμμετέχουν ισότιμα.</li>
+        <li><strong>Πρακτικές στρατηγικές:</strong>
+          <ul>
+            <li>«Αξιολόγηση προϋπαρχουσών γνώσεων» μέσω σύντομων διαγνωστικών ασκήσεων.</li>
+            <li>«Ευέλικτη ομαδοποίηση» με ομάδες που αλλάζουν δυναμικά ανάλογα με το αντικείμενο.</li>
+            <li>«Κλιμακούμενη δυσκολία» στις δραστηριότητες, ώστε κάθε μαθητής να εργάζεται στο κατάλληλο επίπεδο του.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <p><strong>Β. Βιωματική Μάθηση με Projects (Section 5.2)</strong></p>
+      <ul>
+        <li><strong>Δομή project:</strong> Καθορισμός φάσεων --- Ενημέρωση, Σχεδιασμός, Υλοποίηση, Παρουσίαση, Αξιολόγηση.</li>
+        <li><strong>Ρόλοι μαθητών:</strong> Κατανομή σε ομάδες με ξεκάθαρες ευθύνες (ερευνητής, συντονιστής, παρουσιαστής).</li>
+        <li><strong>Παράδειγμα «Rotkäppchen»:</strong> Μετάφραση, σκηνοθεσία σύντομου θεατρικού, καταγραφή κριτικών ερωτήσεων για το κείμενο.</li>
+      </ul>
+
+      <p><strong>Γ. Αντεστραμμένη Τάξη (Flipped Classroom, Section 5.3)</strong></p>
+      <ul>
+        <li><strong>Βασικές αρχές:</strong> Μεταφορά του παραδοσιακού «μαθήματος» εκτός τάξης (βίντεο, podcasts, διαδραστικά κείμενα) και χρήση του χρόνου στην τάξη για ενεργητικές δραστηριότητες.</li>
+        <li><strong>Σχεδιαστικά ζητήματα:</strong> Επιλογή κατάλληλων ψηφιακών πόρων, δημιουργία οδηγιών για το σπίτι, μονάδες αξιολόγησης της προετοιμασίας.</li>
+      </ul>
+
+      <p><strong>Δ. Διερευνητική Προσέγγιση (Section 5.4)</strong></p>
+      <ul>
+        <li><strong>Διατύπωση ερωτημάτων:</strong> Καθοδήγηση μαθητών να θέτουν αυθεντικά ερωτήματα και να χρησιμοποιούν διαδικτυακές βάσεις για αναζήτηση απαντήσεων.</li>
+        <li><strong>Κριτική σκέψη:</strong> Εργασίες ανάλυσης γνήσιων κειμένων και εντοπισμός αξιόπιστων πηγών.</li>
+      </ul>
+
+      <p><strong>Ε. Problem-Based Learning (Section 5.5)</strong></p>
+      <ul>
+        <li><strong>Ρόλος εκπαιδευτικού:</strong> Φιλοσοφία του «διευκολυντή» που υποκινεί την έρευνα και την αυτοκαθοδήγηση.</li>
+        <li><strong>Δομή περιπτωσιακής μελέτης:</strong> Παρουσίαση ρεαλιστικών προβλημάτων, εργασίες σε ομάδες, ανάπτυξη λύσεων, αναστοχασμός.</li>
+      </ul>
+
+      <p><strong>ΣΤ. Τεχνητή Νοημοσύνη στην Εκπαίδευση (Section 5.6)</strong></p>
+      <ul>
+        <li><strong>Εφαρμογές AI:</strong> Προτάσεις για εξατομικευμένη διδασκαλία, αυτόματη ανατροφοδότηση σε γραπτές εργασίες, chatbots για πρακτική ομιλίας.</li>
+        <li><strong>Προκλήσεις:</strong> Ηθικά ζητήματα, ανάγκη εποπτείας του αλγοριθμικού bias, εκπαίδευση εκπαιδευτικών στη σωστή χρήση.</li>
+      </ul>
+
+      <p><strong>Ζ. Ψηφιακά Εργαλεία και Πλατφόρμες</strong></p>
+      <ul>
+        <li><strong>LMS και wikis:</strong> Δημιουργία συνεργατικών χώρων μάθησης, αρχειοθέτηση εργασιών.</li>
+        <li><strong>Podcasts και βίντεο:</strong> Παραγωγή αυθεντικού ραδιοφωνικού υλικού, vlog tasks για πρακτική κατανόησης και παραγωγής λόγου.</li>
+        <li><strong>Διαδραστικοί πίνακες και εφαρμογές Web 2.0:</strong> Mentimeter, Kahoot!, Padlet για live αξιολόγηση και συμμετοχή.</li>
+      </ul>
+  </div></div>
+
+  <!-- Modal 6 -->
+  <div id="modal6" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('modal6')">×</button><h3>Πακέτο 6: Ψηφιακά πολυτροπικά κείμενα στη διδασκαλία της ξένης γλώσσας</h3>
+      <p><strong>Εισαγωγή</strong></p>
+      <ul>
+        <li>Ορισμός πολυτροπικού κειμένου: συνδυασμός γλώσσας με εικόνα, ήχο, κ.ά.</li>
+        <li>Έμφαση στον πολυγραμματισμό και την κριτική ανάγνωση/δημιουργία multimodal κειμένων, όπως προβλέπουν τα σημερινά Προγράμματα Σπουδών.</li>
+      </ul>
+
+      <p><strong>6.1 Πληροφοριογραφήματα (Infographics)</strong></p>
+      <ol>
+        <li><strong>Ορισμός & Τύποι</strong>
+          <ul>
+            <li>Στατιστικό, ιεραρχικό, χρονολογικό, διαδικασιακό (process), γεωγραφικό, network, concept.</li>
+          </ul>
+        </li>
+        <li><strong>Παιδαγωγική Αξιοποίηση</strong>
+          <ul>
+            <li>Edugraphics, οπτικός & ψηφιακός γραμματισμός, εργαλεία δημιουργίας.</li>
+          </ul>
+        </li>
+        <li><strong>Infographics από τον/την εκπαιδευτικό</strong>
+          <ul>
+            <li>Σύντομες σημειώσεις, οδηγοί "how to", αφίσες, εξέλιξη διαδικασιών, αφορμές παραγωγής λόγου κ.ά.</li>
+          </ul>
+        </li>
+        <li><strong>Infographics από τους/τις μαθητές/τριες</strong>
+          <ul>
+            <li>Δομικά στοιχεία (τίτλος, εισαγωγή, κυρίως σώμα, συμπέρασμα), κανόνες σχεδιασμού, ιδέες εργασιών (visual essay, χρονογραμμή, λεξιλόγιο κ.ά.).</li>
+          </ul>
+        </li>
+        <li><strong>Έτοιμα πρότυπα στο Διαδίκτυο</strong>
+          <ul>
+            <li>Πηγές: Venngage, Pinterest, Larry Ferlazzo Edublog.</li>
+          </ul>
+        </li>
+      </ol>
+
+      <p><strong>6.2 Συννεφόλεξα (Word clouds)</strong></p>
+      <ul>
+        <li>Ορισμός, βασικά στοιχεία (συχνότητα, σημασία, κατηγοριοποίηση), πλεονεκτήματα για οπτικούς μαθητές, ανάπτυξη κριτικής σκέψης.</li>
+        <li><strong>Ιδέες αξιοποίησης:</strong> μνήμη, αυτοαξιολόγηση, ανάλυση κειμένων, συγκριτική μελέτη, δημιουργική γραφή, διαδραστικά παιχνίδια, δημοσκοπήσεις, αυτοπροσωπογραφίες κ.ά.</li>
+      </ul>
+
+      <p><strong>6.3 Διαδραστική Αφίσα (Glog)</strong></p>
+      <ul>
+        <li>Ορισμός & δυνατότητες πολυμεσικής αφίσας (κείμενο, εικόνα, ήχος, βίντεο).</li>
+        <li>Παιδαγωγική χρήση: παρουσίαση projects, περιγραφή προσώπων/τόπων, ομαδικές εργασίες.</li>
+        <li>Παραδείγματα αφισών από μαθητές/εκπαιδευτικούς και έτοιμες λύσεις στο Διαδίκτυο.</li>
+      </ul>
+
+      <p><strong>6.4 Χρονογραμμές (Timelines)</strong></p>
+      <ul>
+        <li>Ορισμός & διδακτική αξία: οργάνωση ιστορικών γεγονότων, βημάτων διαδικασιών, σύγκριση φαινομένων.</li>
+        <li>Δημιουργία από εκπαιδευτικούς: δομημένες χρονογραμμές για εισαγωγή/ανακεφαλαίωση.</li>
+        <li>Δημιουργία από μαθητές: ομαδικά projects, εμβάθυνση σε ιστορικά/βιογραφικά θέματα.</li>
+      </ul>
+
+      <p><strong>6.5 Podcasts / Vodcasts</strong></p>
+      <ul>
+        <li>Ορισμός & διαφορές (ήχος vs βίντεο).</li>
+        <li>Διδακτική αξιοποίηση: ακουστική κατανόηση, παραγωγή προφορικού λόγου, έργα έρευνας.</li>
+        <li>Παραδείγματα podcasts/vodcasts εκπαιδευτικών και μαθητών, καθώς και διαθέσιμα στο διαδίκτυο.</li>
+      </ul>
+
+      <p><strong>2. Πρόσθετο Υλικό -- Εργαλεία Δημιουργίας</strong></p>
+
+      <p><strong>1. Εργαλεία Δημιουργίας Συννεφόλεξων</strong></p>
+      <ul>
+        <li><strong>EdWordle:</strong> Απλό, χωρίς εγγραφή, βασικές φίλτρα λέξεων.</li>
+        <li><strong>Tagxedo:</strong> Σχήματα, πιο εντυπωσιακά σχέδια, εξαγωγή σε JPG/PNG.</li>
+        <li><strong>WordItOut:</strong> Παραμετροποίηση χρωμάτων, φόντου, φίλτρα.</li>
+        <li><strong>Word clouds for kids:</strong> Παιχνιδιάρικο interface για μικρότερες ηλικίες.</li>
+        <li><strong>Tagul (WordArt):</strong> Πολλές μορφές, animation λέξεων, υπερσύνδεσμοι.</li>
+      </ul>
+
+      <p><strong>2. Εργαλεία Δημιουργίας Χρονογραμμών</strong></p>
+      <ul>
+        <li><strong>Preceden:</strong> Layers, ορόσημα, γεγονότα με διάρκεια, έως 10 δωρεάν γεγονότα.</li>
+        <li><strong>Tiki-Toki:</strong> 3D παρουσίαση, ταξινόμηση ανά θεματικό πεδίο.</li>
+        <li><strong>Timetoast:</strong> Εικόνες, κείμενο, υπερσύνδεσμοι, ροή καταχωρήσεων.</li>
+        <li><strong>Sutori:</strong> Συνεργατικό, ενσωμάτωση quizzes (πολλαπλής επιλογής, drag-and-drop).</li>
+        <li><strong>TimelineJS:</strong> Open-source, βασίζεται σε Google Sheets, πληθώρα παραδειγμάτων.</li>
+        <li><strong>Prezi:</strong> Μη γραμμικές παρουσιάσεις με templates χρονογραμμών.</li>
+      </ul>
+
+      <p><strong>3. Εργαλεία Δημιουργίας Διαδραστικής Αφίσας</strong></p>
+      <ul>
+        <li>Αναλυτική λίστα πλατφορμών (π.χ. Glogster, Canva, Adobe Spark κ.ά.), με περιγραφή δυνατοτήτων κάθε εργαλείου.</li>
+      </ul>
+  </div></div>
+
+  <!-- Modals 7-14 placeholders -->
+  <div id="modal7" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('modal7')">×</button><h3>Πακέτο 7: Placeholder</h3></div></div>
+  <div id="modal8" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('modal8')">×</button><h3>Πακέτο 8: Ψηφιακός γραμματισμός σε ευρωπαϊκά πλαίσια αναφοράς και προγράμματα σπουδών</h3></div></div>
+  <div id="modal9" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('modal9')">×</button><h3>Πακέτο 9: Ανοικτοί Εκπαιδευτικοί Πόροι για τις ξένες γλώσσες</h3></div></div>
+  <div id="modal10" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('modal10')">×</button><h3>Πακέτο 10: Ψηφιακή αφήγηση</h3></div></div>
+  <div id="modal11" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('modal11')">×</button><h3>Πακέτο 11: Ψηφιακές εκπαιδευτικές πλατφόρμες</h3></div></div>
+  <div id="modal12" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('modal12')">×</button><h3>Πακέτο 12: Κριτική ανάγνωση διδακτικών πρακτικών και σεναρίων</h3></div></div>
+  <div id="modal13" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('modal13')">×</button><h3>Πακέτο 13: Ανασχεδιασμός σεναρίων με ενσωμάτωση θεωριών μάθησης και διδακτικής</h3></div></div>
+  <div id="modal14" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('modal14')">×</button><h3>Πακέτο 14: Αξιοποίηση και εφαρμογή σεναρίων στην πράξη: Προοπτικές και αναπλαισίωση</h3></div></div>
+
   <script>
     function toggleButtons(i) { const el=document.getElementById('sub-'+i); if(el) el.style.display = el.style.display==='block'?'none':'block'; }
     function openModal(id) { document.getElementById(id).style.display='block'; }
