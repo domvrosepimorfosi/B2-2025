@@ -35,9 +35,7 @@
     <h2>Εκπαιδευτικός Αγγλικών – Θεατρολόγος 🎭📚<br>Επιμορφωτής Τ.Π.Ε 💻📖<br>Διευθυντής 1ου Γυμνασίου Πυλαίας 🏫👨‍🏫</h2>
   </div>
   <div class="subtitle">Επιμόρφωση στις Τ.Π.Ε (3η Περίοδος – 2025) 💡🚀</div>
-  <div id="packages">
-    <!-- 1-14 -->
-    <script>
+ <script>
   const titles = [
     'Πακέτο 1: Η ελληνική εκπαιδευτική εμπειρία στον δρόμο της νέας ψηφιακής εποχής',
     'Πακέτο 2: Κριτική αποτίμηση του CALL',
@@ -54,6 +52,7 @@
     'Πακέτο 13: Ανασχεδιασμός σεναρίων με ενσωμάτωση θεωριών μάθησης και διδακτικής',
     'Πακέτο 14: Αξιοποίηση και εφαρμογή σεναρίων στην πράξη: Προοπτικές και αναπλαισίωση'
   ];
+
   const quizUrls = [
     'https://domvrosepimorfosi.github.io/unit1/',
     'https://domvrosepimorfosi.github.io/unit2/',
@@ -62,38 +61,56 @@
     'https://domvrosepimorfosi.github.io/unti5/',
     'https://domvrosepimorfosi.github.io/unit6/',
     'https://domvrosepimorfosi.github.io/unit7/',
-    'https://domvrosepimorfosi.github.io/unit8/'
+    'https://domvrosepimorfosi.github.io/unit8/',
+    'https://domvrosepimorfosi.github.io/unit9/',
+    'https://domvrosepimorfosi.github.io/unit9/'
   ];
-  titles.forEach((t,i)=>{
-    const idx = i+1;
+
+  titles.forEach((t, i) => {
+    const idx = i + 1;
     const quizLink = quizUrls[i] || '#';
     let extraButton = '';
-    if(idx === 2) {
+
+    // Ορίζουμε τα extra buttons ανά πακέτο
+    if (idx === 2) {
       extraButton = `
         <a href="https://drive.google.com/file/d/1XEjJekYVNBxjT6E2wpPyK9XCeR6ZPPGG/view?usp=sharing" target="_blank" class="sub-button extra">NetQuizPro4 📊</a>
         <a href="https://drive.google.com/file/d/1C-Cdh9K_dVh3NEsLTtgmjnuQ1ui8Cjua/view?usp=sharing" target="_blank" class="sub-button extra">HotPotatoes 🥔</a>
         <a href="https://drive.google.com/file/d/1QNBZMIYJxyVtVQP_k23kICEF8iQ-r7YG/view?usp=sharing" target="_blank" class="sub-button extra">OnlineTools 🛠️</a>
-        <a href="https://drive.google.com/file/d/1b8u6_pRoJwEOQcRlfWLqF9fj3jOmN2Dp/view?usp=sharing" target="_blank" class="sub-button extra">Διαδικτυακές πηγές για τη διδασκαλία των ξένων γλωσσών 🌐</a>
+        <a href="https://drive.google.com/file/d/1b8u6_pRoJwEOQcRlfWLqF9fj3jOmN2Dp/view?usp=sharing" target="_blank" class="sub-button extra">Διαδικτυακές πηγές 🌐</a>
       `;
-    } else if(idx === 5) {
+    } else if (idx === 5) {
       extraButton = `<a href="https://drive.google.com/file/d/10b_ZAgkPlNltRS1BHqcl7_-yB4Q1aKt2/view?usp=sharing" target="_blank" class="sub-button extra">Φύλλα Εργασίας 📝</a>`;
-    } else if(idx === 6) {
+    } else if (idx === 6) {
       extraButton = `<a href="https://drive.google.com/file/d/1HRIenOSdi5pDSpbfP5-919kBG7jiL9P_/view?usp=sharing" target="_blank" class="sub-button extra">Πολυτροπικά Κείμενα 🖼️</a>`;
-    } else if(idx === 8) {
-      extraButton = `<a href="https://drive.google.com/file/d/1MD5IG5iKhiCZ3Rtv3FeyRsM9jkx6dgKV/view?usp=sharing" target="_blank" class="sub-button extra">Αναλυτικοί δείκτες επικοινωνιακής επάρκειας 📊</a>`;
+    } else if (idx === 8) {
+      extraButton = `<a href="https://drive.google.com/file/d/1MD5IG5iKhiCZ3Rtv3FeyRsM9jkx6dgKV/view?usp=sharing" target="_blank" class="sub-button extra">Δείκτες 📊</a>`;
+    } else if (idx === 9) {
+      extraButton = `
+        <a href="https://drive.google.com/file/d/1NPUtRn0mHs7akl7Mwi3oJqdFqNnomu7i/view?usp=sharing" target="_blank" class="sub-button extra">Διαδραστικά εγχειρίδια</a>
+        <a href="https://drive.google.com/file/d/1PNBV_SfDv-vu2FWXaI6Rby_6Mf-xjAhO/view?usp=sharing" target="_blank" class="sub-button extra">Αποθετήρια</a>
+      `;
     }
-    document.write(
-      `<div class="package">
-        <button class="package-button" onclick="toggleButtons(${idx})">${t}</button>
+
+    document.write(`
+      <div class="package">
+        <button class="package-button" onclick="toggleButtons(${idx})">
+          ${t}
+        </button>
         <div class="sub-buttons" id="sub-${idx}">
-          <button class="sub-button summary" onclick="openModal('modal${idx}')">Περίληψη Ενότητας 📄</button>
-          <a href="${quizLink}" target="_blank" class="sub-button quiz">Quiz ❓</a>
+          <button class="sub-button summary" onclick="openModal('modal${idx}')">
+            Περίληψη Ενότητας 📄
+          </button>
+          <a href="${quizLink}" target="_blank" class="sub-button quiz">
+            Quiz ❓
+          </a>
           ${extraButton}
         </div>
-      </div>`
-    );
+      </div>
+    `);
   });
-    </script>
+</script>
+
   </div>
 
   <!-- Modals 1-4 full text -->
@@ -774,8 +791,174 @@
     </ul>
   </div>
 </div>
-  <div id="modal9" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('modal9')">×</button><h3>Πακέτο 9: Ανοικτοί Εκπαιδευτικοί Πόροι για τις ξένες γλώσσες</h3></div></div>
-  <div id="modal10" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('modal10')">×</button><h3>Πακέτο 10: Ψηφιακή αφήγηση</h3></div></div>
+  <div id="modal9" class="modal">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeModal('modal9')">×</button>
+    <h3>Πακέτο 9: Ανοικτοί Εκπαιδευτικοί Πόροι για τις ξένες γλώσσες</h3>
+    
+    <p><strong>Εισαγωγή και στόχοι του κεφαλαίου</strong><br>
+    Το κεφάλαιο εντάσσεται στο πλαίσιο της προχωρημένης επιμόρφωσης Β2 επιπέδου ΤΠΕ για τις ξένες γλώσσες. Σκοπός του είναι να παρουσιάσει τις αρχές, τις μορφές και τις πρακτικές αξιοποίησης των Ανοικτών Εκπαιδευτικών Πόρων (ΑΕΠ) στη διδακτική πράξη, εστιάζοντας ειδικότερα:</p>
+    <ul>
+      <li>στην έννοια και στις διαστάσεις της «ανοικτότητας» (παραγωγή, διανομή, κατανάλωση)</li>
+      <li>στους τύπους ψηφιακού εκπαιδευτικού περιεχομένου (διαδραστικά εγχειρίδια, μαθησιακά αντικείμενα)</li>
+      <li>στις ειδικές εφαρμογές για την αγγλική, γαλλική και γερμανική γλώσσα</li>
+      <li>στην αξιοποίηση ψηφιακών αποθετηρίων, με παραδείγματα από το «Φωτόδεντρο»</li>
+    </ul>
+    
+    <p><strong>9.1 Ανοικτοί Εκπαιδευτικοί Πόροι</strong></p>
+    <ul>
+      <li><strong>Ορισμός (UNESCO 2013):</strong> Υλικό δημοσίου κτήματος ή καλυμμένο με ανοικτή άδεια που επιτρέπει ελεύθερη απόκτηση, αντιγραφή, χρήση, προσαρμογή και διαμοιρασμό.</li>
+      <li><strong>Ιστορικό πλαίσιο:</strong> Από το φόρουμ της UNESCO στο Παρίσι (2002) μέχρι τον Κανονισμό της Ε.Ε. (2013) για το «Άνοιγμα της Εκπαίδευσης» και την έκρηξη MOOCs, wikis, ανοιχτών ψηφιακών αποθετηρίων.</li>
+      <li><strong>Τέσσερις Ελευθερίες (Foote 2005):</strong> Αντιγραφή· Τροποποίηση· Διανομή· Διανομή επεξεργασμένων εκδόσεων.</li>
+      <li><strong>Άδειες Creative Commons:</strong> Από το public domain έως το BY-NC-ND, με συνδυασμούς τεσσάρων βασικών δικαιωμάτων (αναφορά δημιουργού, μη εμπορική χρήση, παρόμοια διανομή, απαγόρευση παραγώγων).</li>
+    </ul>
+    
+    <p><strong>9.2 Ψηφιακό εκπαιδευτικό περιεχόμενο για τις ξένες γλώσσες</strong></p>
+    <p><strong>9.2.1 Τα διαδραστικά εγχειρίδια</strong></p>
+    <ul>
+      <li>Εξέλιξη: Από απλά PDF ηλεκτρονικά αντίγραφα έντυπων βιβλίων (πριν το 2005) σε πλούσιες web-based πλατφόρμες με ήχο, βίντεο, υπερσυνδέσεις, ενσωματωμένα λεξικά, δυνατότητες σχολιασμών.</li>
+      <li>Κώδικες QR: Έντυπα βιβλία εμπλουτισμένα με QR codes που παραπέμπουν σε επιπλέον πολυμεσικό υλικό (βίντεο, ηχητικά αποσπάσματα).</li>
+      <li>Συνοδευτικοί ιστότοποι: Πλατφόρμες συνεργασίας με πρόσθετα φύλλα εργασίας, παιχνίδια, βίντεο, εκπαιδευτικά εργαλεία.</li>
+      <li>Έκδοση για διαδραστικό πίνακα: Αλληλεπιδραστική οθόνη αφής με δραστηριότητες, κουίζ, υποστηρικτικό ήχο και βίντεο.</li>
+      <li>Ψηφιακά Σχολεία: 116 e-books με ΜΑ για τα ελληνικά σχολεία (10 Αγγλικά, 2 Γαλλικά, 2 Γερμανικά) με συνθετική φωνή και υποστήριξη ΑΜΕΑ.</li>
+    </ul>
+    
+    <p><strong>9.3 Μαθησιακά Αντικείμενα για την αγγλική γλώσσα</strong></p>
+    <ul>
+      <li>Συνεργασία 14 ειδικών στο “Ψηφιακό Σχολείο I” και μικρότερη ομάδα στο “II”, δοκιμές από μαθητές.</li>
+      <li>Παιδαγωγικό σκεπτικό: scaffolding, σύνδεση με κοινωνικό-πολιτισμικό πλαίσιο, διαθεματικότητα.</li>
+      <li>Κατηγορίες ΜΑ:
+        <ul>
+          <li>Ηχητικά αποσπάσματα με transcript (A2–B1)</li>
+          <li>Ψηφιακές παρουσιάσεις & 2D animation</li>
+          <li>Εκπαιδευτικά παιχνίδια (π.χ. mystery game)</li>
+          <li>Κείμενα με reading comprehension δραστηριότητες</li>
+          <li>Writing apps με μοντέλα κειμένου και γλωσσικούς πόρους</li>
+        </ul>
+      </li>
+    </ul>
+    
+    <p><strong>9.4 Μαθησιακά Αντικείμενα για τη γαλλική γλώσσα</strong></p>
+    <ul>
+      <li>Αρχές εμπλουτισμού: “Η αρχή – το ήμισυ του παντός”, ποικιλία ψηφιακών αντικειμένων (βίντεο, ασκήσεις, παιχνίδια).</li>
+      <li>Τύποι περιεχομένου: Διαδραστικά κείμενα, λεξικά, worksheets, multimedia clips.</li>
+    </ul>
+    
+    <p><strong>9.5 Μαθησιακά Αντικείμενα για τη γερμανική γλώσσα</strong></p>
+    <ul>
+      <li>Ομάδα σχεδιασμού με κοινές αρχές όπως για τα Αγγλικά.</li>
+      <li>Είδη ΜΑ: audio clips, εκπαιδευτικά παιχνίδια, παρουσιάσεις & animation, ψηφιοποιημένα κείμενα, drills, οδηγίες ένταξης.</li>
+    </ul>
+    
+    <p><strong>9.6 Αξιοποίηση ψηφιακών αποθετηρίων</strong></p>
+    <ul>
+      <li>Ψηφιακές βάσεις (Φωτόδεντρο, Fotodentro LOR, Fotodentro Video) για ελεύθερη πρόσβαση σε ΑΕΠ.</li>
+      <li>Παράδειγμα: Σχεδιασμός μαθήματος με θέμα το Βρετανικό Μουσείο · cloze activity, video tour, listening app, mystery game.</li>
+    </ul>
+    
+    <p><strong>Συμπερασματικά</strong><br>
+    Το κεφάλαιο αναδεικνύει πώς οι ψηφιακές ΤΠΕ και οι ΑΕΠ — από PDF και audio clips μέχρι πλήρως ενσωματωμένες πλατφόρμες — μπορούν να μεταμορφώσουν τη διδακτική πράξη, προσφέροντας:
+    <ol>
+      <li>Πολλαπλές διαδρομές μάθησης (multi-modal content)</li>
+      <li>Ευελιξία και εξατομίκευση (adaptive learning objects)</li>
+      <li>Συνεργατικές & διαθεματικές προσεγγίσεις</li>
+      <li>Κριτική προσέγγιση πηγών και αδειοδοτήσεων (CC licenses)</li>
+    </ol>
+    Τοποθετώντας τον εκπαιδευτικό στο κέντρο της διαδικασίας σχεδιασμού και αξιολόγησης του ψηφιακού υλικού.</p>
+  </div>
+</div>
+  <div id="modal10" class="modal">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeModal('modal10')">×</button>
+    <h3>Πακέτο 10: Ψηφιακή αφήγηση</h3>
+    
+    <p><strong>Εισαγωγή στην ψηφιακή αφήγηση</strong><br>
+    Η ψηφιακή αφήγηση (<em>digital storytelling</em>) συνδυάζει την παραδοσιακή τέχνη της αφήγησης με ψηφιακά μέσα, προκειμένου να μεταδοθούν νοήματα και συναισθήματα με πολυτροπικό τρόπο. Το κεφάλαιο χωρίζεται σε τέσσερις υποενότητες:</p>
+    <ol>
+      <li>Αρχική ανάγνωση — Πλεονεκτήματα και γενική σκιαγράφηση της ψηφιακής αφήγησης.</li>
+      <li>Αναλυτική προσέγγιση — Θεωρητικά στοιχεία και παραδείγματα εφαρμογής.</li>
+      <li>Παραδείγματα για την Πρωτοβάθμια Εκπαίδευση — Οδηγίες και έργα μαθητών.</li>
+      <li>Παραδείγματα για τη Δευτεροβάθμια Εκπαίδευση — Δραστηριότητες και παρόμοια έργα σε μεγαλύτερα παιδιά.</li>
+    </ol>
+    
+    <p><strong>10.1 Η ψηφιακή αφήγηση στην ξενόγλωσση τάξη</strong></p>
+    <ul>
+      <li><strong>Κατηγορίες ψηφιακών αφηγήσεων:</strong>
+        <ul>
+          <li>Προσωπικές αφηγήσεις: Ιστορίες ζωής ή σημαντικών γεγονότων.</li>
+          <li>Ιστορικά ντοκιμαντέρ: Δραματικά γεγονότα που φωτίζουν το παρελθόν.</li>
+          <li>Ενημερωτικές/προτρεπτικές αφηγήσεις: Καθοδήγηση ή πειθώ (π.χ. διαφημίσεις).</li>
+        </ul>
+      </li>
+      <li><strong>Πηγές δημιουργίας:</strong>
+        <ul>
+          <li>Μαθητικές αφηγήσεις: ομάδες με ρόλους (συντονιστής, σεναριογράφος, τεχνικός).</li>
+          <li>Αφηγήσεις εκπαιδευτικών: δείγματα για καθοδήγηση.</li>
+          <li>Έτοιμες αφηγήσεις: αποθετήρια (π.χ. Φωτόδεντρο Βίντεο) υπό άδειες Creative Commons.</li>
+        </ul>
+      </li>
+      <li><strong>Πλεονεκτήματα & περιορισμοί:</strong>
+        <ul>
+          <li>Οφέλη: ενεργός ρόλος μαθητών, ενίσχυση ψηφιακού και μεταγλωσσικού γραμματισμού, κίνητρα.</li>
+          <li>Προκλήσεις: έμφαση μόνο σε πολυμέσα, ανισομερής συμμετοχή, τεχνικές δυσκολίες, χρονοβόρα διαδικασία.</li>
+        </ul>
+      </li>
+    </ul>
+    
+    <p><strong>10.2 Ψηφιακή αφήγηση: είδη, εργαλεία και χρησιμότητα</strong></p>
+    <p><strong>1. Θεωρητικό πλαίσιο</strong></p>
+    <ul>
+      <li>Αφήγηση ως μέσο μετάδοσης γνώσης (Bruner 1990, Wertsch 1998, Sadik 2008).</li>
+      <li>Καινοτομία από Center for Digital Storytelling (Berkeley, 1993).</li>
+    </ul>
+    <p><strong>2. Επτά βασικά στοιχεία</strong></p>
+    <ol>
+      <li>Οπτική γωνία (point of view)</li>
+      <li>Ερώτηση-κλειδί (dramatic question)</li>
+      <li>Συναίσθημα (emotional content)</li>
+      <li>Φωνή (voice)</li>
+      <li>Μουσική/ηχητικά εφέ (soundtrack)</li>
+      <li>Οικονομία περιεχομένου (economy)</li>
+      <li>Ρυθμός αφήγησης (pacing)</li>
+    </ol>
+    <p>Κάθε στοιχείο συμβάλλει στην εστίαση και στη συναισθηματική εμπλοκή του κοινού.</p>
+    <p><strong>3. Διαδικασία παραγωγής (Three Phases)</strong></p>
+    <ul>
+      <li><strong>Pre-production:</strong> σύνταξη ιστορίας, storyboard, οργάνωση φακέλων.</li>
+      <li><strong>Production:</strong> ηχογράφηση, προσθήκη πολυμέσων (εικόνες, μουσική, βίντεο).</li>
+      <li><strong>Post-production:</strong> επεξεργασία βίντεο, αποθήκευση, δημοσίευση.</li>
+    </ul>
+    <p><strong>4. Εργαλεία ψηφιακής αφήγησης</strong></p>
+    <ul>
+      <li>Google Images, Flickr, Pics4Learning, Pexels, Vecteezy</li>
+      <li>Classroom Clipart, Clker, ClipArt ETC, FindIcons</li>
+      <li>GIPHY, Tenor, Pictures Animations, gifs-paradise</li>
+    </ul>
+    <p>Η λίστα είναι ενδεικτική και υπόκειται σε ανανέωση.</p>
+    <p><strong>5. Παράδειγμα εφαρμογής</strong><br>
+    Βήμα-βήμα δημιουργία ψηφιακής αφήγησης με Windows Movie Maker, Powtoon, Prezi κ.ά.</p>
+    
+    <p><strong>10.3 Παραδείγματα στην Πρωτοβάθμια Εκπαίδευση</strong></p>
+    <ul>
+      <li><strong>Δημιουργία διαδραστικού βιβλίου:</strong> μαθητές γράφουν ιστορίες, εικονογραφούν, ηχογραφούν.</li>
+      <li><strong>Διαδραστικές παρουσιάσεις:</strong> χρήση Prezi ή PowerPoint με multimedia.</li>
+      <li><strong>Πρακτικές συμβουλές:</strong> δομημένο storyboard, ημερολόγιο έργου.</li>
+    </ul>
+    
+    <p><strong>10.4 Χρησιμότητα στη Δευτεροβάθμια Εκπαίδευση</strong></p>
+    <ul>
+      <li><strong>Κίνητρα μαθητών εφήβων:</strong> την ελευθερία έκφρασης σε πολυτροπικά έργα.</li>
+      <li><strong>Παραδείγματα:</strong>
+        <ul>
+          <li>Prezi/PowerPoint — έργα λογοτεχνίας με ήχο και εφέ.</li>
+          <li>Διαδραστικό βιβλίο — “ψηφιακή αφήγηση εμπνευσμένη από εικόνα”.</li>
+          <li>Κόμικ — διαλόγους και αφήγηση.</li>
+          <li>Κινούμενα σχέδια — animation με κοινωνικά μηνύματα.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
   <div id="modal11" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('modal11')">×</button><h3>Πακέτο 11: Ψηφιακές εκπαιδευτικές πλατφόρμες</h3></div></div>
   <div id="modal12" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('modal12')">×</button><h3>Πακέτο 12: Κριτική ανάγνωση διδακτικών πρακτικών και σεναρίων</h3></div></div>
   <div id="modal13" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('modal13')">×</button><h3>Πακέτο 13: Ανασχεδιασμός σεναρίων με ενσωμάτωση θεωριών μάθησης και διδακτικής</h3></div></div>
