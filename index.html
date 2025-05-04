@@ -38,49 +38,61 @@
   <div id="packages">
     <!-- 1-14 -->
     <script>
-      const titles = [
-        'Πακέτο 1: Η ελληνική εκπαιδευτική εμπειρία στον δρόμο της νέας ψηφιακής εποχής',
-        'Πακέτο 2: Κριτική αποτίμηση του CALL',
-        'Πακέτο 3: Ψηφιακός και πολυτροπικός γραμματισμός στη διδασκαλία των γλωσσών',
-        'Πακέτο 4: Εισαγωγή στο εκπαιδευτικό σενάριο: Αρχές σχεδίασης, θεωρητικό πλαίσιο και αξιολόγηση',
-        'Πακέτο 5: Μάθηση με νέους τρόπους – Κριτική ανάγνωση σεναρίων',
-        'Πακέτο 6: Ψηφιακά πολυτροπικά κείμενα στη διδασκαλία της ξένης γλώσσας',
-        'Πακέτο 8: Ψηφιακός γραμματισμός σε ευρωπαϊκά πλαίσια αναφοράς και προγράμματα σπουδών',
-        'Πακέτο 9: Ανοικτοί Εκπαιδευτικοί Πόροι για τις ξένες γλώσσες',
-        'Πακέτο 10: Ψηφιακή αφήγηση',
-        'Πακέτο 11: Ψηφιακές εκπαιδευτικές πλατφόρμες',
-        'Πακέτο 12: Κριτική ανάγνωση διδακτικών πρακτικών και σεναρίων',
-        'Πακέτο 13: Ανασχεδιασμός σεναρίων με ενσωμάτωση θεωριών μάθησης και διδακτικής',
-        'Πακέτο 14: Αξιοποίηση και εφαρμογή σεναρίων στην πράξη: Προοπτικές και αναπλαισίωση'
-      ];
-      const quizUrls = [
-        'https://domvrosepimorfosi.github.io/unit1/',
-        'https://domvrosepimorfosi.github.io/unit2/',
-        'https://domvrosepimorfosi.github.io/unit3/',
-        'https://domvrosepimorfosi.github.io/unit4/',
-        'https://domvrosepimorfosi.github.io/unti5/',
-        'https://domvrosepimorfosi.github.io/unit6/'
-      ];
-      titles.forEach((t,i)=>{
-        const idx = i+1;
-        const quizLink = quizUrls[i] || '#';
-        let extraButton = '';
-        if(idx === 5) {
-          extraButton = `<a href="https://drive.google.com/file/d/10b_ZAgkPlNltRS1BHqcl7_-yB4Q1aKt2/view?usp=sharing" target="_blank" class="sub-button extra">Φύλλα Εργασίας 📝</a>`;
-        } else if(idx === 6) {
-          extraButton = `<a href="https://drive.google.com/file/d/1HRIenOSdi5pDSpbfP5-919kBG7jiL9P_/view?usp=sharing" target="_blank" class="sub-button extra">Πολυτροπικά Κείμενα 🖼️</a>`;
-        }
-        document.write(
-          `<div class="package">
-            <button class="package-button" onclick="toggleButtons(${idx})">${t}</button>
-            <div class="sub-buttons" id="sub-${idx}">
-              <button class="sub-button summary" onclick="openModal('modal${idx}')">Περίληψη Ενότητας 📄</button>
-              <a href="${quizLink}" target="_blank" class="sub-button quiz">Quiz ❓</a>
-              ${extraButton}
-            </div>
-          </div>`
-        );
-      });
+  const titles = [
+    'Πακέτο 1: Η ελληνική εκπαιδευτική εμπειρία στον δρόμο της νέας ψηφιακής εποχής',
+    'Πακέτο 2: Κριτική αποτίμηση του CALL',
+    'Πακέτο 3: Ψηφιακός και πολυτροπικός γραμματισμός στη διδασκαλία των γλωσσών',
+    'Πακέτο 4: Εισαγωγή στο εκπαιδευτικό σενάριο: Αρχές σχεδίασης, θεωρητικό πλαίσιο και αξιολόγηση',
+    'Πακέτο 5: Μάθηση με νέους τρόπους – Κριτική ανάγνωση σεναρίων',
+    'Πακέτο 6: Ψηφιακά πολυτροπικά κείμενα στη διδασκαλία της ξένης γλώσσας',
+    'Πακέτο 7: Ψηφιακός γραμματισμός σε ευρωπαϊκά πλαίσια αναφοράς και προγράμματα σπουδών',
+    'Πακέτο 8: Ψηφιακός γραμματισμός σε ευρωπαϊκά πλαίσια αναφοράς και προγράμματα σπουδών',
+    'Πακέτο 9: Ανοικτοί Εκπαιδευτικοί Πόροι για τις ξένες γλώσσες',
+    'Πακέτο 10: Ψηφιακή αφήγηση',
+    'Πακέτο 11: Ψηφιακές εκπαιδευτικές πλατφόρμες',
+    'Πακέτο 12: Κριτική ανάγνωση διδακτικών πρακτικών και σεναρίων',
+    'Πακέτο 13: Ανασχεδιασμός σεναρίων με ενσωμάτωση θεωριών μάθησης και διδακτικής',
+    'Πακέτο 14: Αξιοποίηση και εφαρμογή σεναρίων στην πράξη: Προοπτικές και αναπλαισίωση'
+  ];
+  const quizUrls = [
+    'https://domvrosepimorfosi.github.io/unit1/',
+    'https://domvrosepimorfosi.github.io/unit2/',
+    'https://domvrosepimorfosi.github.io/unit3/',
+    'https://domvrosepimorfosi.github.io/unit4/',
+    'https://domvrosepimorfosi.github.io/unti5/',
+    'https://domvrosepimorfosi.github.io/unit6/',
+    'https://domvrosepimorfosi.github.io/unit7/',
+    'https://domvrosepimorfosi.github.io/unit8/'
+  ];
+  titles.forEach((t,i)=>{
+    const idx = i+1;
+    const quizLink = quizUrls[i] || '#';
+    let extraButton = '';
+    if(idx === 2) {
+      extraButton = `
+        <a href="https://drive.google.com/file/d/1XEjJekYVNBxjT6E2wpPyK9XCeR6ZPPGG/view?usp=sharing" target="_blank" class="sub-button extra">NetQuizPro4 📊</a>
+        <a href="https://drive.google.com/file/d/1C-Cdh9K_dVh3NEsLTtgmjnuQ1ui8Cjua/view?usp=sharing" target="_blank" class="sub-button extra">HotPotatoes 🥔</a>
+        <a href="https://drive.google.com/file/d/1QNBZMIYJxyVtVQP_k23kICEF8iQ-r7YG/view?usp=sharing" target="_blank" class="sub-button extra">OnlineTools 🛠️</a>
+        <a href="https://drive.google.com/file/d/1b8u6_pRoJwEOQcRlfWLqF9fj3jOmN2Dp/view?usp=sharing" target="_blank" class="sub-button extra">Διαδικτυακές πηγές για τη διδασκαλία των ξένων γλωσσών 🌐</a>
+      `;
+    } else if(idx === 5) {
+      extraButton = `<a href="https://drive.google.com/file/d/10b_ZAgkPlNltRS1BHqcl7_-yB4Q1aKt2/view?usp=sharing" target="_blank" class="sub-button extra">Φύλλα Εργασίας 📝</a>`;
+    } else if(idx === 6) {
+      extraButton = `<a href="https://drive.google.com/file/d/1HRIenOSdi5pDSpbfP5-919kBG7jiL9P_/view?usp=sharing" target="_blank" class="sub-button extra">Πολυτροπικά Κείμενα 🖼️</a>`;
+    } else if(idx === 8) {
+      extraButton = `<a href="https://drive.google.com/file/d/1MD5IG5iKhiCZ3Rtv3FeyRsM9jkx6dgKV/view?usp=sharing" target="_blank" class="sub-button extra">Αναλυτικοί δείκτες επικοινωνιακής επάρκειας 📊</a>`;
+    }
+    document.write(
+      `<div class="package">
+        <button class="package-button" onclick="toggleButtons(${idx})">${t}</button>
+        <div class="sub-buttons" id="sub-${idx}">
+          <button class="sub-button summary" onclick="openModal('modal${idx}')">Περίληψη Ενότητας 📄</button>
+          <a href="${quizLink}" target="_blank" class="sub-button quiz">Quiz ❓</a>
+          ${extraButton}
+        </div>
+      </div>`
+    );
+  });
     </script>
   </div>
 
@@ -631,8 +643,137 @@
   </div></div>
 
   <!-- Modals 7-14 placeholders -->
-  <div id="modal7" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('modal7')">×</button><h3>Πακέτο 7: Placeholder</h3></div></div>
-  <div id="modal8" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('modal8')">×</button><h3>Πακέτο 8: Ψηφιακός γραμματισμός σε ευρωπαϊκά πλαίσια αναφοράς και προγράμματα σπουδών</h3></div></div>
+   <div id="modal7" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal('modal7')">×</button>
+      <h3>Πακέτο 7: Ψηφιακός γραμματισμός σε ευρωπαϊκά πλαίσια αναφοράς και προγράμματα σπουδών</h3>
+      
+      <p><strong>1. Εισαγωγή</strong><br>
+      Το ταξίδι της ξενόγλωσσης εκπαίδευσης συνδέεται άρρηκτα με σταθμούς αξιολόγησης, τόσο μικρούς (διαμορφωτική αξιολόγηση) όσο και μεγάλους (πιστοποίηση γλωσσομάθειας). Αναλύεται η διάκριση <em>assessment of learning</em> vs. <em>assessment for learning</em> (Taylor & Nolen, 2008) και η ανάγκη εναλλακτικών, φιλικότερων προς τον μαθητή μορφών αξιολόγησης.</p>
+      
+      <p><strong>2. Αξιολόγηση γλωσσομάθειας με ψηφιακά μέσα (Ενότητα 7.1)</strong></p>
+      <p><strong>2.1. Ψηφιακά εργαλεία και αξιολόγηση</strong></p>
+      <ul>
+        <li>Παραδοσιακή προσέγγιση: γραπτές/προφορικές δοκιμασίες χαμηλής αντικειμενικότητας, μερικές φορές αναξιόπιστες και με washback effect (Popham, 1991· Wiggins, 1994).</li>
+        <li>Ψηφιακή προσέγγιση: ο μαθητής μετατρέπεται από αντικείμενο αξιολόγησης σε ενεργό συμμέτοχο· συλλέγονται πληροφορίες για κίνητρα, στρατηγικές μάθησης, στάσεις κ.ά., μέσα από εργαλεία που αναπαράγουν “πραγματικά” γλωσσικά περιβάλλοντα.</li>
+      </ul>
+      
+      <p><strong>2.2. Είδη ψηφιακών εργαλείων</strong></p>
+      <ol>
+        <li><strong>Online quizzes</strong> (π.χ. Hot Potatoes, GoConqr, Testmoz, Netquiz) – Δυνατότητα αυτοδιόρθωσης, εμπλουτισμός με πολυμέσα, άμεση ανατροφοδότηση.</li>
+        <li><strong>Ηλεκτρονικός φάκελος (e-portfolio)</strong> – Webfolios (WordPress, Google Apps, Weebly, Prezi κ.ά.) για συγκέντρωση εργασιών, στοχαστικών ημερολογίων, σχολίων και κριτικής.</li>
+        <li><strong>Ηλεκτρονικά ημερολόγια</strong> – Εργαλεία όπως Penzu, Glimpse, Journalate ενισχύουν τον μεταγνωστικό αναστοχασμό των μαθητών.</li>
+        <li><strong>Κλίμακες διαβαθμισμένων κριτηρίων / Ρουμπρίκες</strong> – Περιγραφικά κριτήρια με σαφή επίπεδα επίδοσης (Quick Rubric, Rubistar, Google Docs Teacher Rubric) για αντικειμενική αυτο- και ομότιμη αξιολόγηση.</li>
+        <li><strong>Εφαρμογές έρευνας / δημοσκοπήσεων</strong> – Poll Everywhere, SurveyMonkey, Google Forms για έρευνα ικανοποίησης ή κατανόησης μετά από project.</li>
+        <li><strong>Ψηφιακά παιχνίδια</strong> – Kahoot, Quizalize, Quizlet, Socrative για διασκεδαστική εμπέδωση γραμματικών ή λεξιλογικών φαινομένων.</li>
+      </ol>
+      
+      <p><strong>2.3. Σύνοψη (7.1.2)</strong><br>
+      Η ενσωμάτωση ψηφιακών μέσων προσφέρει φιλικότερο, συμμετοχικό πλαίσιο αξιολόγησης, αλλά απαιτεί:</p>
+      <ul>
+        <li>Σαφή στοχοθεσία και επιλογή εργαλείων</li>
+        <li>Κριτική ανάλυση αποτελεσμάτων (ναι/όχι δεν αρκούν)</li>
+        <li>Χρήση ανατροφοδότησης για την περαιτέρω πορεία μάθησης</li>
+      </ul>
+      
+      <p><strong>3. Κατάρτιση προγράμματος εκπαίδευσης για τις εξετάσεις του ΚΠΓ (Ενότητα 7.2)</strong></p>
+      <p><strong>3.1. Δεδομένα που πρέπει να ληφθούν υπόψη (7.2.1)</strong></p>
+      <ul>
+        <li>Διδακτικό ωρολόγιο: ~258 ώρες έως Στ' Δημοτικού (επίπεδο A2), +180 ώρες στη Γ’ Γυμνασίου (B1–B2).</li>
+        <li>Προφίλ τάξης: ετερογένεια, μεταναστευτικό υπόβαθρο, συναισθηματική ωριμότητα, άγχος εξετάσεων.</li>
+        <li>Θεσμικό πλαίσιο: ΕΠΣ-ΞΓ (2016), αποφάσεις ΥΑ Διεύθυνσης Σπουδών (13724/03-10-2011· 173169/18-10-2016).</li>
+      </ul>
+      
+      <p><strong>3.2. Δημιουργώντας ευνοϊκές συνθήκες εφαρμογής (7.2.2)</strong></p>
+      <ul>
+        <li>Ενημέρωση γονέων / κηδεμόνων και συνεργασία με συντονιστές, Επιστημονική Ομάδα ΚΠΓ.</li>
+        <li>Προώθηση της πρωτοβουλίας με αφίσες / ενημερωτικά φυλλάδια (Canva, PosterMyWall, Crello) ώστε η προετοιμασία να γίνει συλλογική και διαθεματική.</li>
+      </ul>
+      
+      <p><strong>3.3. Σχεδιάζοντας το πρόγραμμα εκπαίδευσης (7.2.3)</strong></p>
+      <p><strong>3.3.1. Μελέτη δεικτών επικοινωνιακής επάρκειας</strong><br>
+      Ο/η εκπαιδευτικός αναλύει τους δείκτες που καθορίζει το ΕΠΣ-ΞΓ για το επίπεδο στόχο και χαρτογραφεί κενά και δυνατότητες των μαθητών.</p>
+      <p><strong>3.3.2. Η αξιοποίηση του σχολικού εγχειριδίου (7.2.3.1)</strong><br>
+      Σύνδεση θεματικών ενοτήτων και επικοινωνιακών δεξιοτήτων με περιεχόμενο εξετάσεων.</p>
+      <p><strong>3.3.3. Η αξιοποίηση ψηφιακών μέσων (7.2.3.2)</strong><br>
+      Σχεδιασμός ψηφιακών δραστηριοτήτων αυτοαξιολόγησης, προσομοίωσης εξετάσεων, e-portfolio, online quizzes κ.ά.</p>
+      <p><strong>3.3.4. Η χρήση και αξιοποίηση ηλεκτρονικής πλατφόρμας (7.2.3.3)</strong><br>
+      Λειτουργικά περιβάλλοντα (Moodle, Google Classroom) για διαμοιρασμό υλικού, υποβολή εργασιών, ανατροφοδότηση.</p>
+      
+      <p><strong>3.4. Λίγο πριν τις εξετάσεις (7.2.4)</strong></p>
+      <ul>
+        <li>Προσομοιώσεις πλήρων εξετάσεων με χρονομέτρηση.</li>
+        <li>Ανασκόπηση συχνών λαθών και εστίαση σε αδυναμίες.</li>
+      </ul>
+      
+      <p><strong>3.5. Συμπέρασμα (7.2.5)</strong><br>
+      Η διασύνδεση σχολικής διδασκαλίας και πιστοποίησης ΚΠΓ πετυχαίνει όταν στηρίζεται σε στοχευμένο σχεδιασμό, ενεργή συμμετοχή όλων των εμπλεκομένων (μαθητές, εκπαιδευτικοί, γονείς) και ορθή χρήση ψηφιακών εργαλείων, ώστε η αξιολόγηση να λειτουργεί πραγματικά για τη μάθηση και όχι απλώς ως «τελικός σταθμός».</p>
+    </div>
+  </div>
+ <div id="modal8" class="modal">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeModal('modal8')">×</button>
+    <h3>Πακέτο 8: Ψηφιακός γραμματισμός σε ευρωπαϊκά πλαίσια αναφοράς και προγράμματα σπουδών</h3>
+    
+    <p><strong>8.1 Η έννοια του ψηφιακού γραμματισμού</strong><br>
+    Το κεφάλαιο εισάγει τον ψηφιακό γραμματισμό όχι ως απλές τεχνικές δεξιότητες, αλλά ως πολυεπίπεδο φαινόμενο:</p>
+    <ol>
+      <li><strong>Ψηφιακή ικανότητα:</strong> συνδυασμός τεχνικών δεξιοτήτων, εννοιών, στάσεων και προσεγγίσεων, απαραίτητη βάση για τα επόμενα επίπεδα (Martin 2008).</li>
+      <li><strong>Ψηφιακή χρήση:</strong> εφαρμογή ψηφιακών εργαλείων σε εξειδικευμένα περιβάλλοντα.</li>
+      <li><strong>Ψηφιακός μετασχηματισμός:</strong> κριτική ανάλυση και καινοτομία με ψηφιακά μέσα, επηρεάζοντας κοινωνία και επαγγέλματα.</li>
+    </ol>
+    <p>Ο ψηφιακός γραμματισμός συνδέεται με την ικανότητα εντοπισμού, αξιολόγησης, δημιουργίας και κοινοποίησης ψηφιακού περιεχομένου, καθώς και με την κριτική και υπεύθυνη συμμετοχή σε ψηφιακά δίκτυα.</p>
+    
+    <p><strong>8.2 Ευρωπαϊκά πλαίσια αναφοράς</strong></p>
+    <p><strong>8.2.1 DigComp</strong><br>
+    Το DigComp (Digital Competence Framework for Citizens) ορίζει 5 βασικούς τομείς ψηφιακής ικανότητας:</p>
+    <ul>
+      <li>Γραμματισμός Πληροφοριών & Δεδομένων</li>
+      <li>Επικοινωνία & Συνεργασία</li>
+      <li>Δημιουργία Ψηφιακού Περιεχομένου</li>
+      <li>Ασφάλεια</li>
+      <li>Επίλυση Προβλημάτων</li>
+    </ul>
+    <p>Η πιο πρόσφατη έκδοση (2.2, Μάρτιος 2022) προσθέτει 250+ νέους περιγραφητές για emerging technologies (AI, IoT) και green digital skills, εστιάζοντας στην ασφάλεια, την κριτική χρήση και την προσβασιμότητα.</p>
+    
+    <p><strong>8.2.2 DigCompEdu</strong><br>
+    Το DigCompEdu εξειδικεύει την ψηφιακή ικανότητα ειδικά για εκπαιδευτικούς, με 22 ικανότητες σε 6 τομείς:</p>
+    <ol>
+      <li>Επαγγελματική ενασχόληση (επικοινωνία, συνεργασία)</li>
+      <li>Ψηφιακές πηγές (δημιουργία/κοινοποίηση πόρων)</li>
+      <li>Διδασκαλία & μάθηση (διαχείριση ψηφιακών μέσων)</li>
+      <li>Αξιολόγηση (ψηφιακές στρατηγικές αξιολόγησης)</li>
+      <li>Ενδυνάμωση μαθητών (inclusion, personalization)</li>
+      <li>Διευκόλυνση ψηφιακών ικανοτήτων μαθητών (υπεύθυνη χρήση)</li>
+    </ol>
+    <p>Οι 6 αυτοί τομείς συνδέονται με τα CEFR επίπεδα (A1–C2), επιτρέποντας στους εκπαιδευτικούς να αυτοαξιολογηθούν από Newcomer (A1) έως Pioneer (C2).</p>
+    
+    <p><strong>8.3 CEFR – Συνοδευτικός Τόμος (Companion Volume)</strong><br>
+    Ο Συνοδευτικός Τόμος του ΚΕΠΑ (2020) ενσωματώνει την πολυτροπικότητα και την διαδικτυακή αλληλεπίδραση μέσω δύο νέων κλιμάκων:</p>
+    <ul>
+      <li>Online Conversation & Discussion</li>
+      <li>Goal-oriented Online Transactions & Collaboration</li>
+    </ul>
+    <p>Επιπλέον, εμπλουτίζει περιγραφητές για την κατανόηση οπτικοακουστικού υλικού (π.χ. βίντεο-ειδήσεις) ακόμα και στα χαμηλά επίπεδα (Pre-A1, A2).</p>
+    
+    <p><strong>8.4 Ψηφιακός γραμματισμός στα ελληνικά προγράμματα σπουδών</strong></p>
+    <p><strong>8.4.1 Ενιαίο Πρόγραμμα Σπουδών για τις Ξένες Γλώσσες (ΕΠΣ-ΞΓ)</strong><br>
+    • Περιγράφει δεξιότητες κατά επίπεδο γλωσσομάθειας (όχι κατά τάξη), αναγνωρίζοντας τις διαφοροποιημένες ανάγκες των μαθητών.<br>
+    • Ενδεικτικά σενάρια: επεξεργασία πολυτροπικών αφισών με χρήση εργαλείων (Excel, Google Sheets, MovieMaker, Audacity) και αξιολόγηση μέσω ρουμπρίκων ή ψηφιακών δημοσκοπήσεων (Mentimeter, Google Forms).</p>
+    
+    <p><strong>8.4.2 Πρόγραμμα Σπουδών Ξένων Γλωσσών στο Γενικό Λύκειο (ΠΣ-ΓΛ)</strong><br>
+    • Γραμμένο στα ελληνικά για χρήση σε Αγγλικά, Γαλλικά, Γερμανικά, προσφέρει επιλογές θεματικών ενοτήτων με ψηφιακά αποθετήρια (ΥΠΑΙΘ, e-me).<br>
+    • Παράδειγμα Α1 κατανόησης: πολυτροπική αφίσα για οφέλη/κινδύνους καθημερινών δραστηριοτήτων, με ερωτήσεις κατανόησης κειμένου και κριτικής θεώρησης.<br>
+    • Περιλαμβάνει φύλλα εργασίας και διδακτικά σενάρια με πρακτική χρήση ψηφιακών εργαλείων, ενθαρρύνοντας την αυτονομία και τη συνεργασία των μαθητών.</p>
+    
+    <p><strong>8.5 Επίλογος</strong><br>
+    Συνοψίζονται τα κύρια χαρακτηριστικά των νέων Προγραμμάτων Σπουδών (ΕΠΣ-ΞΓ και ΠΣ-ΓΛ):</p>
+    <ul>
+      <li>Περιγραφή δεξιοτήτων κατά επίπεδο γλωσσομάθειας, αποδεχόμενα τη διαφορετικότητα της τάξης.</li>
+      <li>Ενσωμάτωση της ψηφιακής ικανότητας ως βασική δεξιότητα στα αναλυτικά προγράμματα, με έμφαση στην κριτική χρήση, την ασφάλεια, την προσβασιμότητα και τη διαρκή επαγγελματική ανάπτυξη εκπαιδευτικών και μαθητών.</li>
+    </ul>
+  </div>
+</div>
   <div id="modal9" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('modal9')">×</button><h3>Πακέτο 9: Ανοικτοί Εκπαιδευτικοί Πόροι για τις ξένες γλώσσες</h3></div></div>
   <div id="modal10" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('modal10')">×</button><h3>Πακέτο 10: Ψηφιακή αφήγηση</h3></div></div>
   <div id="modal11" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('modal11')">×</button><h3>Πακέτο 11: Ψηφιακές εκπαιδευτικές πλατφόρμες</h3></div></div>
